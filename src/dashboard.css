@@ -1,0 +1,174 @@
+/* Global Styles */
+body, html {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f5f7;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container-scroller {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    background-color: #2e3a59;
+    color: #fff;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .navbar .navbar-brand {
+    color: #fff;
+    font-size: 1.5rem;
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    background-color: #1b2a47;
+    color: #fff;
+    width: 250px;
+    padding: 1rem;
+    position: fixed;
+    height: 100vh;
+  }
+  
+  .sidebar a {
+    color: #c1c7d0;
+    display: block;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .sidebar a:hover {
+    color: #fff;
+  }
+  
+  /* Page Header Styles */
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .page-header h4 {
+    font-size: 1.75rem;
+    font-weight: 600;
+  }
+  
+  .quick-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .quick-links a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .quick-links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Stat Card Styles */
+  .card {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+  }
+  
+  .stat-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .stat-card .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .stat-card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .stat-card h5 {
+    color: #007bff;
+    font-size: 1.2rem;
+  }
+  
+  .stat-card p {
+    font-size: 0.9rem;
+    color: #6c757d;
+  }
+  
+  .stat-card .chart {
+    margin-left: 2rem;
+  }
+  
+  /* Button and Dropdown Styles */
+  .btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #5a6268;
+  }
+  
+  .dropdown-menu {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* Footer Styles */
+  .footer {
+    background-color: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid #e3e6f0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer span {
+    color: #6c757d;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 100%;
+      position: relative;
+      height: auto;
+    }
+  
+    .navbar {
+      padding: 1rem;
+    }
+  
+    .stat-card {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .stat-card .chart {
+      margin-left: 0;
+    }
+  }
+  
