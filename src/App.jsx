@@ -5,6 +5,8 @@ import Header from './components/Header';
 import Dashboard from './pages/Dashboard';
 import Users from './pages/Users';
 import UserProfile from './pages/UserProfile';
+import Orders from './pages/Orders';
+import OrderDetails from './pages/OrderDetails';
 
 const App = () => {
   return (
@@ -18,6 +20,8 @@ const App = () => {
               <Route path="/" element={<Dashboard />} />
               <Route path="/users" element={<Users />} />
               <Route path="/user/:id" element={<UserProfile />} />
+              <Route path="/orders" element={<Orders/>} />
+              <Route path="/order/:id" element={<OrderDetails/>} />
             </Routes>
           </main>
         </div>

@@ -19,7 +19,9 @@ const Sidebar = () => {
             <li className={location.pathname === '/' ? 'bg-blue-700 rounded p-2' : ''}>
                 <Link to="/">Dashboard</Link>
             </li>
-            <li>Orders</li>
+            <li className={location.pathname === '/orders'? 'bg-blue-700 rounded p-2' : ''}>
+                <Link to="/orders">Orders</Link>
+            </li>
             <li className={location.pathname === '/users' ? 'bg-blue-700 rounded p-2' : ''}>
                 <Link to="/users">Users</Link>
             </li>
