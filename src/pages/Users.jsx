@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useGet } from "../api/useGet";
+import { Link } from "react-router-dom";
 
 const Users = () => {
 
@@ -33,7 +34,11 @@ const Users = () => {
                 <tbody>
                     {users.map((user, index) => (
                         <tr key={index}>
-                            <td className="border p-2">{user.name}</td>
+                            <td className="border p-2">
+                                <Link to={`/user/${user.id}`}>
+                                    {user.name}
+                                </Link>
+                            </td>
                             <td className="border p-2">{user.email}</td>
                             <td className="border p-2">{user.role}</td>
                         </tr>

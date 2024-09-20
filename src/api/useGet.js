@@ -1,13 +1,13 @@
 import axios from "axios";
 import { baseApi } from "./config";
 
-const useGet = async (url) => {
+const useGet = async (url, params=null) => {
     try{
         let headers = {
             'Content-Type': 'application/json'
         }
         const completeUrl = baseApi + url;
-        const response = await axios.get(completeUrl, {headers: headers});
+        const response = await axios.get(completeUrl, {headers: headers, params: params});
 
         console.log("GET", "url", url, "response", response.data);
 
