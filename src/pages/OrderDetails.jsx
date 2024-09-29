@@ -4,10 +4,10 @@ import { useGet } from "../api/useGet";
 
 const OrderDetails = () => {
     const [order, setOrder] = useState(null);
-    const {id} = useParams();
-    console.log(id);
+    const { id } = useParams();
+
     const getOrder = async () => {
-        const { success, data, error } = await useGet('/order', {id});
+        const { success, data, error } = await useGet('/user/order', { id });
         if (success) {
             setOrder(data);
         }
@@ -28,12 +28,6 @@ const OrderDetails = () => {
                 <p><strong>Order ID:</strong> {order.id}</p>
                 <p><strong>Created At:</strong> {new Date(order.created_at).toLocaleString()}</p>
                 <p><strong>Delivery Mode:</strong> {order.delivery_mode}</p>
-            </div>
-            <div className="mb-4">
-                <h2 className="text-xl font-semibold">Consignee Information</h2>
-                <p><strong>Name:</strong> {`${order.consignee_info.firstName} ${order.consignee_info.lastName}`}</p>
-                <p><strong>Email:</strong> {order.consignee_info.email}</p>
-                <p><strong>Mobile:</strong> {order.consignee_info.mobileNumber}</p>
             </div>
             <div className="mb-4">
                 <h2 className="text-xl font-semibold">Shipping Information</h2>

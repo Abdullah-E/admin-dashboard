@@ -1,35 +1,37 @@
+// Sidebar.js
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import "./Sidebar.css";
 
 const Sidebar = () => {
     const location = useLocation();
 
     return (
-        <div className="w-64 bg-blue-600 text-white p-6">
-        <h1 className="text-2xl font-bold mb-8">Keibo</h1>
-        <div className="flex items-center mb-8">
-            <div className="w-10 h-10 bg-white rounded-full mr-3"></div>
-            <div>
-            <p className="font-semibold">Admin</p>
-            <p className="text-sm text-blue-300">Premium user</p>
+        <div className="sidebar-container">
+            <h1 className="sidebar-title">Keibo</h1>
+            <div className="sidebar-user-info">
+                <div className="sidebar-avatar"></div>
+                <div>
+                    <p className="sidebar-username">User</p>
+                    <p className="sidebar-welcome">Welcome back!</p>
+                </div>
             </div>
-        </div>
-        <nav>
-            <ul className="space-y-2">
-            <li className={location.pathname === '/' ? 'bg-blue-700 rounded p-2' : ''}>
-                <Link to="/">Dashboard</Link>
-            </li>
-            <li className={location.pathname === '/orders'? 'bg-blue-700 rounded p-2' : ''}>
-                <Link to="/orders">Orders</Link>
-            </li>
-            <li className={location.pathname === '/users' ? 'bg-blue-700 rounded p-2' : ''}>
-                <Link to="/users">Users</Link>
-            </li>
-            <li>Chat</li>
-            <li>Icons</li>
-            <li>User Pages</li>
-            </ul>
-        </nav>
+            <nav>
+                <ul className="sidebar-nav">
+                    <li className={location.pathname === '/' ? 'active' : ''}>
+                        <Link to="/">Dashboard</Link>
+                    </li>
+                    <li className={location.pathname === '/orders' ? 'active' : ''}>
+                        <Link to="/orders">My Orders</Link>
+                    </li>
+                    <li className={location.pathname === '/profile' ? 'active' : ''}>
+                        <Link to="/profile">My Profile</Link>
+                    </li>
+                    <li className={location.pathname === '/support' ? 'active' : ''}>
+                        <Link to="/support">Support</Link>
+                    </li>
+                </ul>
+            </nav>
         </div>
     );
 };

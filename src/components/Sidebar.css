@@ -1,0 +1,65 @@
+/* Sidebar styles */
+.sidebar-container {
+    width: 16rem;
+    background-color: #b57edc; /* Tailwind bg-blue-600 */
+    color: white;
+    padding: 1.5rem;
+}
+
+.sidebar-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.sidebar-user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.sidebar-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: white;
+    border-radius: 9999px; /* Tailwind rounded-full */
+    margin-right: 0.75rem;
+}
+
+.sidebar-username {
+    font-weight: 600;
+}
+
+.sidebar-welcome {
+    font-size: 0.875rem;
+    color: #68306a; /* Tailwind text-blue-300 */
+}
+
+.sidebar-nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar-nav li {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem; /* Add spacing between buttons */
+}
+
+.sidebar-nav li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem; /* Tailwind rounded */
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+}
+
+.sidebar-nav li a:hover {
+    background-color: #934cb7; /* Tailwind bg-blue-700 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+}
+
+.active {
+    background-color: #934cb7; /* Tailwind bg-blue-700 */
+    border-radius: 0.25rem; /* Tailwind rounded */
+}
