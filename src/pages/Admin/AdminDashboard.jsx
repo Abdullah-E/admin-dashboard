@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useGet } from '../../api/useGet';
+import { usePost } from '../../api/usePost';
 
 const AdminDashboard = () => {
     const [recentOrders, setRecentOrders] = useState([]);
@@ -9,11 +10,14 @@ const AdminDashboard = () => {
 
     useEffect(() => {
         const fetchDashboardData = async () => {
-            const { success: ordersSuccess, data: ordersData } = await useGet('/user/recent-orders');
-            const { success: statsSuccess, data: statsData } = await useGet('/user/dashboard-stats');
 
-            if (ordersSuccess) setRecentOrders(ordersData);
-            if (statsSuccess) setStats(statsData);
+            const response = await usePost("/")
+
+            // const { success: ordersSuccess, data: ordersData } = await useGet('/user/recent-orders');
+            // const { success: statsSuccess, data: statsData } = await useGet('/user/dashboard-stats');
+
+            // if (ordersSuccess) setRecentOrders(ordersData);
+            // if (statsSuccess) setStats(statsData);
         };
 
         fetchDashboardData();

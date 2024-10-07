@@ -19,6 +19,7 @@ const App = () => {
 
   const isAuthenticated = () => {
     const user = localStorage.getItem('user');
+    // console.log("checking auth", user!==null);
     return user !== null;
   };
 

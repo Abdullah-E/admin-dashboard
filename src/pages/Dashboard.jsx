@@ -9,11 +9,13 @@ const Dashboard = () => {
 
     useEffect(() => {
         const fetchDashboardData = async () => {
-            const { success: ordersSuccess, data: ordersData } = await useGet('/user/recent-orders');
-            const { success: statsSuccess, data: statsData } = await useGet('/user/dashboard-stats');
+            //add apis
 
-            if (ordersSuccess) setRecentOrders(ordersData);
-            if (statsSuccess) setStats(statsData);
+            // const { success: ordersSuccess, data: ordersData } = await useGet('/user/recent-orders');
+            // const { success: statsSuccess, data: statsData } = await useGet('/user/dashboard-stats');
+
+            // if (ordersSuccess) setRecentOrders(ordersData);
+            // if (statsSuccess) setStats(statsData);
         };
 
         fetchDashboardData();
