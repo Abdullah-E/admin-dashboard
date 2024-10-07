@@ -5,10 +5,10 @@ import AdminLayout from './layouts/AdminLayout';
 import Login from './pages/Login';
 
 // User pages
-import Dashboard from './pages/Dashboard';
+import UserDashboard from './pages/User/Dashboard';
 import Users from './pages/Users';
 import UserProfile from './pages/UserProfile';
-import Orders from './pages/Orders';
+import UserOrders from './pages/User/Orders';
 import OrderDetails from './pages/OrderDetails';
 import Support from './pages/Support';
 
@@ -40,10 +40,10 @@ const App = () => {
             isAuthenticated() ? (
               <UserLayout>
                 <Routes>
-                  <Route path="/" element={<Dashboard />} />
+                  <Route path="/" element={<UserDashboard />} />
                   <Route path="/users" element={<Users />} />
                   <Route path="/user/:id" element={<UserProfile />} />
-                  <Route path="/orders" element={<Orders />} />
+                  <Route path="/orders" element={<UserOrders />} />
                   <Route path="/order/:id" element={<OrderDetails />} />
                   <Route path="/support" element={<Support />} />
                 </Routes>

@@ -1,10 +1,10 @@
 import React from 'react';
-import Sidebar from '../components/Sidebar';
+import UserSidebar from '../components/UserSidebar';
 import Header from '../components/Header';
 
 const UserLayout = ({ children }) => (
   <div className="flex h-screen bg-gray-100">
-    <Sidebar />
+    <UserSidebar />
     <div className="flex-1 overflow-auto">
       <Header />
       <main>{children}</main>

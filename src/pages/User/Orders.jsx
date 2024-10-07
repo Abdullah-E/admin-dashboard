@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-// import { useGet } from "../api/useGet";
+import { useGet } from "@/api/useGet";
 // import { usePost } from "../api/usePost";
 
-const Orders = () => {
+const UserOrders = () => {
+    console.log("Orders");
+
     const [orders, setOrders] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
 
     const getOrders = async (page) => {
-        const { success, data, meta } = await useGet("/user/orders/", { page });
+        const user = localStorage.getItem('user');
+        const { success, data, meta } = await useGet("/user/orders/", { id:user.id });
         if (success) {
             setOrders(data);
             setTotalPages(meta.totalPages);
@@ -102,4 +105,4 @@ const Orders = () => {
     );
 };
 
-export default Orders;
+export default UserOrders;

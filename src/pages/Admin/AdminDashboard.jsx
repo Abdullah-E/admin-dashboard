@@ -7,11 +7,11 @@ import { usePost } from '../../api/usePost';
 const AdminDashboard = () => {
     const [recentOrders, setRecentOrders] = useState([]);
     const [stats, setStats] = useState({ totalOrders: 0, pendingOrders: 0, quotedOrders: 0 });
-
+    
     useEffect(() => {
         const fetchDashboardData = async () => {
 
-            const response = await usePost("/")
+            // const response = await usePost("/")
 
             // const { success: ordersSuccess, data: ordersData } = await useGet('/user/recent-orders');
             // const { success: statsSuccess, data: statsData } = await useGet('/user/dashboard-stats');

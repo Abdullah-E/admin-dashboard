@@ -1,9 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useGet } from '../api/useGet';
+// import { useGet } from '../api/useGet';
 
-const Dashboard = () => {
+const UserDashboard = () => {
     const [recentOrders, setRecentOrders] = useState([]);
     const [stats, setStats] = useState({ totalOrders: 0, pendingOrders: 0, quotedOrders: 0 });
 
@@ -74,4 +74,4 @@ const Dashboard = () => {
     );
 };
 
-export default Dashboard;
+export default UserDashboard;

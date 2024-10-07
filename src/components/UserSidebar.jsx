@@ -3,8 +3,14 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import "./Sidebar.css";
 
-const Sidebar = () => {
+const UserSidebar = () => {
+    console.log("UserSidebar");
     const location = useLocation();
+
+
+    const isActive = (path) => {
+        return location.pathname === `/user${path}` ? 'active' : '';
+    }
 
     return (
         <div className="sidebar-container">
@@ -18,17 +24,17 @@ const Sidebar = () => {
             </div>
             <nav>
                 <ul className="sidebar-nav">
-                    <li className={location.pathname === '/' ? 'active' : ''}>
-                        <Link to="/">Dashboard</Link>
+                    <li className={isActive('/')}>
+                        <Link to="/user/">Dashboard</Link>
                     </li>
-                    <li className={location.pathname === '/orders' ? 'active' : ''}>
-                        <Link to="/orders">My Orders</Link>
+                    <li className={isActive('/orders')}>
+                        <Link to="/user/orders">My Orders</Link>
                     </li>
-                    <li className={location.pathname === '/profile' ? 'active' : ''}>
-                        <Link to="/profile">My Profile</Link>
+                    <li className={isActive('/profile')}>
+                        <Link to="/user/profile">My Profile</Link>
                     </li>
-                    <li className={location.pathname === '/support' ? 'active' : ''}>
-                        <Link to="/support">Support</Link>
+                    <li className={isActive('/support')}>
+                        <Link to="/user/support">Support</Link>
                     </li>
                 </ul>
             </nav>
@@ -36,4 +42,4 @@ const Sidebar = () => {
     );
 };
 
-export default Sidebar;
+export default UserSidebar;
