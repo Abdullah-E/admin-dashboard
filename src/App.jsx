@@ -9,7 +9,7 @@ import UserDashboard from './pages/User/Dashboard';
 import Users from './pages/Users';
 import UserProfile from './pages/UserProfile';
 import UserOrders from './pages/User/Orders';
-import OrderDetails from './pages/OrderDetails';
+import OrderDetails from './pages/User/OrderDetails';
 import Support from './pages/Support';
 
 // Admin pages

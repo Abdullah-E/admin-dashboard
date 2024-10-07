@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { useGet } from "../api/useGet";
+import { useGet } from "../../api/useGet";
 
 const OrderDetails = () => {
     const [order, setOrder] = useState(null);
     const { id } = useParams();
 
     const getOrder = async () => {
-        const { success, data, error } = await useGet('/user/order', { id });
+        const { success, data} = await useGet('/order', { id });
         if (success) {
             setOrder(data);
         }
