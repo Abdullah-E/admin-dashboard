@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, redirect } from "react-router-dom";
 import { usePost } from "../api/usePost";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(null);
 
   const navigate = useNavigate();
 
@@ -23,12 +23,14 @@ const Login = () => {
     if(response.userData.role === "admin"){
       console.log("admin");
       // return redirect("/admin");
-      navigate("/admin");
+      // navigate("/admin");
+      window.location.href = "/admin";
     }
     else{
       console.log("user");
       // return redirect("/user");
-      navigate("/user");
+      window.location.href = "/user";
+      // navigate("/user");
     }
     
   };
