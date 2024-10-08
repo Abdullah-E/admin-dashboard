@@ -6,8 +6,8 @@ import Login from './pages/Login';
 
 // User pages
 import UserDashboard from './pages/User/Dashboard';
-import Users from './pages/Users';
-import UserProfile from './pages/User/Profile';
+import Users from '@/pages/Users';
+import Profile from '@/pages/Profile'
 import UserOrders from './pages/User/Orders';
 import OrderDetails from './pages/User/OrderDetails';
 import Support from './pages/Support';
@@ -42,7 +42,7 @@ const App = () => {
                 <Routes>
                   <Route path="/" element={<UserDashboard />} />
                   {/* <Route path="/users" element={<Users />} /> */}
-                  <Route path="/profile" element={<UserProfile />} />
+                  <Route path="/profile" element={<Profile />} />
                   <Route path="/orders" element={<UserOrders />} />
                   <Route path="/order/:id" element={<OrderDetails />} />
                   <Route path="/support" element={<Support />} />
@@ -62,6 +62,7 @@ const App = () => {
               <AdminLayout>
                 <Routes>
                   <Route path="/" element={<AdminDashboard />} />
+                  <Route path="/profile" element={<Profile />} />
                   {/* Add other admin routes here */}
                 </Routes>
               </AdminLayout>

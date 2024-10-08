@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useGet } from "@/api/useGet";
 
-const UserProfile = () => {
+const Profile = () => {
 
     console.log("UserProfile");
     const [user, setUser] = useState({});
@@ -33,4 +33,4 @@ const UserProfile = () => {
     );
 };
 
-export default UserProfile;
+export default Profile;

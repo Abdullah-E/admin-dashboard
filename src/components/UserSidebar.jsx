@@ -6,7 +6,7 @@ import "./Sidebar.css";
 const UserSidebar = () => {
     // console.log("UserSidebar");
     const location = useLocation();
-
+    const user = JSON.parse(localStorage.getItem('user'));
 
     const isActive = (path) => {
         return location.pathname === `/user${path}` ? 'active' : '';
@@ -18,7 +18,7 @@ const UserSidebar = () => {
             <div className="sidebar-user-info">
                 <div className="sidebar-avatar"></div>
                 <div>
-                    <p className="sidebar-username">User</p>
+                    <p className="sidebar-username">{user.name}</p>
                     <p className="sidebar-welcome">Welcome back!</p>
                 </div>
             </div>

@@ -5,6 +5,10 @@ import "./Sidebar.css";
 const AdminSidebar = () => {
     const location = useLocation();
 
+    const isActive = (path) => {
+        return location.pathname === `/admin${path}` ? 'active' : '';
+    }
+
     const user = JSON.parse(localStorage.getItem('user'));
 
     return (
@@ -19,17 +23,17 @@ const AdminSidebar = () => {
             </div>
             <nav>
                 <ul className="sidebar-nav">
-                    <li className={location.pathname === '/' ? 'active' : ''}>
-                        <Link to="/">Dashboard</Link>
+                    <li className={isActive('/')}>
+                        <Link to="/admin">Dashboard</Link>
                     </li>
-                    <li className={location.pathname === '/orders' ? 'active' : ''}>
-                        <Link to="/orders">All Orders</Link>
+                    <li className={isActive('/orders')}>
+                        <Link to="/admin/orders">All Orders</Link>
                     </li>
-                    <li className={location.pathname === '/profile' ? 'active' : ''}>
-                        <Link to="/profile">My Profile</Link>
+                    <li className={isActive('/profile')}>
+                        <Link to="/admin/profile">My Profile</Link>
                     </li>
-                    <li className={location.pathname === '/support' ? 'active' : ''}>
-                        <Link to="/support">Support</Link>
+                    <li className={isActive('/support')}>
+                        <Link to="/admin/support">Support</Link>
                     </li>
                 </ul>
             </nav>
