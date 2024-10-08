@@ -1,13 +1,16 @@
 // UserProfile.js
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useGet } from "../api/useGet";
+import { useGet } from "@/api/useGet";
 
 const UserProfile = () => {
+
+    console.log("UserProfile");
     const [user, setUser] = useState({});
 
     const getUser = async () => {
-        const { success, data, error } = await useGet("/user/profile");
+        const userStore = JSON.parse(localStorage.getItem("user"));
+        const { success, data} = await useGet("/user", { id: userStore.id });
         if (success) {
             setUser(data);
         }

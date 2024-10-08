@@ -7,7 +7,7 @@ import Login from './pages/Login';
 // User pages
 import UserDashboard from './pages/User/Dashboard';
 import Users from './pages/Users';
-import UserProfile from './pages/UserProfile';
+import UserProfile from './pages/User/Profile';
 import UserOrders from './pages/User/Orders';
 import OrderDetails from './pages/User/OrderDetails';
 import Support from './pages/Support';
@@ -41,8 +41,8 @@ const App = () => {
               <UserLayout>
                 <Routes>
                   <Route path="/" element={<UserDashboard />} />
-                  <Route path="/users" element={<Users />} />
-                  <Route path="/user/:id" element={<UserProfile />} />
+                  {/* <Route path="/users" element={<Users />} /> */}
+                  <Route path="/profile" element={<UserProfile />} />
                   <Route path="/orders" element={<UserOrders />} />
                   <Route path="/order/:id" element={<OrderDetails />} />
                   <Route path="/support" element={<Support />} />

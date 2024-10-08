@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import "./Sidebar.css";
 
 const UserSidebar = () => {
-    console.log("UserSidebar");
+    // console.log("UserSidebar");
     const location = useLocation();
 
 

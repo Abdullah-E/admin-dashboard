@@ -36,6 +36,7 @@ const OrderDetails = () => {
                 <p><strong>State:</strong> {order.shipping_info.state}</p>
                 <p><strong>Country:</strong> {order.shipping_info.country}</p>
                 <p><strong>Post Code:</strong> {order.shipping_info.postCode}</p>
+                <p><strong>Quotation:</strong> {order.quotation?order.quotation:'Not set'}</p>
             </div>
             <div className="mb-4">
                 <h2 className="text-xl font-semibold">Items</h2>
