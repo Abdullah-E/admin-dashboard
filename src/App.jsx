@@ -16,6 +16,7 @@ import Support from './pages/Support';
 import AdminDashboard from './pages/Admin/AdminDashboard';
 import AdminOrders from './pages/Admin/Orders';
 import AdminOrderDetails from './pages/Admin/OrderDetails';
+import AdminUsers from './pages/Admin/AdminUsers';
 
 const App = () => {
 
@@ -67,6 +68,7 @@ const App = () => {
                   <Route path="/profile" element={<Profile />} />
                   <Route path='/orders' element={<AdminOrders/>}/>
                   <Route path='/order/:id' element={<AdminOrderDetails/>}/>
+                  <Route path='/users' element={<AdminUsers/>}/>
                   {/* Add other admin routes here */}
                 </Routes>
               </AdminLayout>

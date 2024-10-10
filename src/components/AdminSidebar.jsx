@@ -29,6 +29,9 @@ const AdminSidebar = () => {
                     <li className={isActive('/orders')}>
                         <Link to="/admin/orders">All Orders</Link>
                     </li>
+                    <li className={isActive('/users')}>
+                        <Link to="/admin/users">Users</Link>
+                    </li>
                     <li className={isActive('/profile')}>
                         <Link to="/admin/profile">My Profile</Link>
                     </li>
