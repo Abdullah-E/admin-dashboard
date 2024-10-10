@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useGet } from "../../api/useGet";
 import { usePost } from "../../api/usePost";
+import { usePut } from "@/api/usePut";
 
 const OrderDetails = () => {
     const [order, setOrder] = useState(null);
@@ -26,10 +27,16 @@ const OrderDetails = () => {
     };
 
     const sendQuotation = async () => {
-        const { success } = await usePost("/send-quotation", { 
-            orderId: id, 
-            quotation 
-        });
+        const { success } = await usePut(
+            "/order/quote", 
+            { 
+                id, 
+                
+            },
+            {
+                quotation
+            }
+        );
         if (success) {
             alert("Quotation sent successfully");
             getOrder(); // Refresh the order to update the UI
