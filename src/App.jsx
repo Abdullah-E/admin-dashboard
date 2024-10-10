@@ -14,6 +14,8 @@ import Support from './pages/Support';
 
 // Admin pages
 import AdminDashboard from './pages/Admin/AdminDashboard';
+import AdminOrders from './pages/Admin/Orders';
+import AdminOrderDetails from './pages/Admin/OrderDetails';
 
 const App = () => {
 
@@ -63,6 +65,8 @@ const App = () => {
                 <Routes>
                   <Route path="/" element={<AdminDashboard />} />
                   <Route path="/profile" element={<Profile />} />
+                  <Route path='/orders' element={<AdminOrders/>}/>
+                  <Route path='/order/:id' element={<AdminOrderDetails/>}/>
                   {/* Add other admin routes here */}
                 </Routes>
               </AdminLayout>
