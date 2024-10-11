@@ -7,7 +7,7 @@ const UserOrders = () => {
 
     const getOrders = async () => {
         const user = JSON.parse(localStorage.getItem('user'));
-        const { success, data } = await useGet("/orders", { id: user.id });
+        const { success, data } = await useGet("/orders", { user_id: user.id });
         if (success) {
             setOrders(data);
         } else {
