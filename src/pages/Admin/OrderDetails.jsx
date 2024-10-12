@@ -30,8 +30,7 @@ const OrderDetails = () => {
         const { success, data } = await usePut(
             "/order/quote", 
             { 
-                id, 
-                
+                id,
             },
             {
                 quotation
@@ -128,7 +127,7 @@ const OrderDetails = () => {
                     Send Quotation
                 </button>
             </div>
-            <Link to="/orders" className="text-blue-600 hover:underline">Back to Orders</Link>
+            <Link to="/admin/orders" className="text-blue-600 hover:underline">Back to Orders</Link>
         </div>
     );
 };

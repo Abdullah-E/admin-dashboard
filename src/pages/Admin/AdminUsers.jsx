@@ -49,12 +49,12 @@ const AdminUsers = () => {
                             <td className="border p-2">{user.name}</td>
                             <td className="border p-2">{user.email}</td>
                             <td className="border p-2">
-                                <button 
+                                {/* <button 
                                     onClick={() => alert(`Edit user: ${user.id}`)}
                                     className="bg-blue-500 text-white px-2 py-1 rounded mr-2"
                                 >
                                     Edit
-                                </button>
+                                </button> */}
                                 <button 
                                     onClick={() => deleteUser(user.id)}
                                     className="bg-red-500 text-white px-2 py-1 rounded"

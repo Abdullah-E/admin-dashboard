@@ -61,7 +61,7 @@ const OrderDetails = () => {
                     </tbody>
                 </table>
             </div>
-            <Link to="/orders" className="text-blue-600 hover:underline">Back to Orders</Link>
+            <Link to="/user/orders" className="text-blue-600 hover:underline">Back to Orders</Link>
         </div>
     );
 };
