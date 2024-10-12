@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useGet } from '@/api/useGet';
+import { ordersToMonthlyHistory } from '@/api/utils';
 
 import StatsComponent from '@/components/OrderStats';
 import ChartComponent from '@/components/OrderChart';
@@ -19,18 +20,7 @@ const UserDashboard = () => {
             const {success, data:orders} = await useGet('/orders', { user_id: user.id, order_by: 'created_at' });
             
             const recentOrders = orders.slice(0, 4);
-            const orderHistory = []
-            orders.forEach(order => {
-                const month = new Date(order.created_at).toLocaleString('default', { month: 'short' });
-                const existing = orderHistory.find(o => o.month === month);
-                if (existing) {
-                    existing.orders++;
-                    existing.averageQuotation += order.quotation;
-                } else {
-                    orderHistory.push({ month, orders: 1, averageQuotation: order.quotation });
-                }
-            })
-            orderHistory.forEach(o => o.averageQuotation /= o.orders);
+            const orderHistory = ordersToMonthlyHistory(orders);
 
             setOrders(orders);
             setRecentOrders(recentOrders);
