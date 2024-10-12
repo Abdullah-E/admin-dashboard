@@ -27,7 +27,7 @@ const OrderDetails = () => {
     };
 
     const sendQuotation = async () => {
-        const { success } = await usePut(
+        const { success, data } = await usePut(
             "/order/quote", 
             { 
                 id, 

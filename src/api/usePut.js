@@ -13,7 +13,7 @@ const usePut = async (url, params = null, body) =>{
 
         console.log("PUT", "url", url, "response", response.data);
         if(response?.data?.success){
-            return response.data.data;
+            return {success:true,data:response.data.data};
         }
         else{
             throw new Error(response.data.error);

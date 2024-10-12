@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+
+import { useDelete } from "@/api/useDelete";
 import { useGet } from "@/api/useGet";
 
 const AdminUsers = () => {
@@ -12,6 +14,16 @@ const AdminUsers = () => {
             alert("Failed to fetch users");
         }
     };
+
+    const deleteUser = async (id) => {
+        const { success } = await useDelete("/user", { id });
+        if (success) {
+            alert("User deleted successfully");
+            getUsers();
+        } else {
+            alert("Failed to delete user");
+        }
+    }
 
     useEffect(() => {
         getUsers();
@@ -44,7 +56,7 @@ const AdminUsers = () => {
                                     Edit
                                 </button>
                                 <button 
-                                    onClick={() => alert(`Delete user: ${user.id}`)}
+                                    onClick={() => deleteUser(user.id)}
                                     className="bg-red-500 text-white px-2 py-1 rounded"
                                 >
                                     Delete
