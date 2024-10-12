@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const OrderTableComponent = ({ orders }) => {
+    const location = useLocation();
     const getStatusBadge = (status) => {
         const colors = {
         'pending': 'bg-yellow-200 text-yellow-800',
@@ -27,6 +28,15 @@ const OrderTableComponent = ({ orders }) => {
         }</span>;
     };
 
+    const getOrderLink = (orderId) => {
+        console.log('location.pathname:', location.pathname);
+        if (location.pathname.startsWith('/admin')) {
+            return `/admin/order/${orderId}`;
+        } else {
+            return `/user/order/${orderId}`;
+        }
+    }
+
     return (
         <div className="bg-white p-4 rounded shadow">
         <h2 className="text-xl font-semibold mb-4">Recent Orders and Quotations</h2>
@@ -51,7 +61,7 @@ const OrderTableComponent = ({ orders }) => {
                     <td className="px-4 py-2">{getQuotationStatusBadge(order.quotation_status)}</td>
                     <td className="px-4 py-2">{order.quotation? `$${order.quotation.toFixed(2)}`:'N/A'}</td>
                     <td className="px-4 py-2">
-                    <Link to={`/order/${order.id}`} className="text-blue-600 hover:underline">
+                    <Link to={getOrderLink(order.id)} className="text-blue-600 hover:underline">
                         View Details
                     </Link>
                     </td>
